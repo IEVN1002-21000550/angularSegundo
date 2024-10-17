@@ -1,60 +1,111 @@
-<div class="grid grid-cols-4 gap-4">
-    <div class="col-start-2">
-      <form [formGroup]="formGroup" class="max-w-sm mx-auto">
-        <!-- Nombre -->
-        <div class="mb-5">
-          <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900">Nombre</label>
-          <input type="text" id="nombre" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="Ingrese su nombre" formControlName="nombre" />
-        </div>
-  
-        <!-- Apellido Paterno -->
-        <div class="mb-5">
-          <label for="apaterno" class="block mb-2 text-sm font-medium text-gray-900">Apellido Paterno</label>
-          <input type="text" id="apaterno" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="Ingrese su apellido" formControlName="apaterno" />
-        </div>
-  
-        <!-- Fecha de Nacimiento -->
-        <div class="mb-5">
-          <h1 class="text-sm font-medium text-gray-900 mb-2">Fecha de nacimiento</h1>
-  
-          <!-- Día -->
-          <label for="dia" class="block mb-2 text-sm font-medium text-gray-900">Día</label>
-          <input type="number" id="dia" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="Ingrese su día" formControlName="dia" />
-  
-          <!-- Mes -->
-          <label for="mes" class="block mb-2 text-sm font-medium text-gray-900">Mes</label>
-          <input type="number" id="mes" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="Ingrese su mes" formControlName="mes" />
-  
-          <!-- Año -->
-          <label for="year" class="block mb-2 text-sm font-medium text-gray-900">Año</label>
-          <input type="number" id="year" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="Ingrese su año" formControlName="year" />
-        </div>
-  
-        <!-- Sexo -->
-        <div class="mb-5">
-          <h1 class="text-sm font-medium text-gray-900 mb-2">Sexo</h1>
-  
-          <!-- Hombre -->
-          <input id="hombre" formControlName="sexo" type="radio" name="sexo" value="hombre"
-          class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" />
-          <label for="hombre" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Hombre</label>
-            <br>
-          <!-- Mujer -->
-          <input id="mujer" formControlName="sexo" type="radio" name="sexo" value="mujer"
-          class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" />
-          <label for="mujer" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Mujer</label>
-        </div>
-  
-        <!-- Botón de enviar -->
-        <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-          Registrar
-        </button>
-      </form>
+
+
+<nav class="bg-white border-gray-200 dark:bg-gray-900">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
+        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Solutec</span>
+    </a>
+    <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+    </button>
+    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+      <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        <li>
+          <a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Inicio</a>
+        </li>
+        <li>
+          <a href="/formulario/zodiaco" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Zodiaco</a>
+        </li>
+        <li>
+          <a href="/formulario/ejemplo1" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Ejemplo</a>
+        </li>
+       
+        
+      </ul>
     </div>
   </div>
-  
+</nav>
+
+<div class="grid grid-cols-4 gap-4">
+  <div class="col-start-2">
+    <form [formGroup]="formGroup" class="max-w-sm mx-auto" (ngSubmit)="onSubmit()">
+      <!-- Nombre -->
+      <div class="mb-5">
+        <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900">Nombre</label>
+        <input type="text" id="nombre" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        placeholder="Ingrese su nombre" formControlName="nombre" />
+      </div>
+
+      <!-- Apellido Paterno -->
+      <div class="mb-5">
+        <label for="apaterno" class="block mb-2 text-sm font-medium text-gray-900">Apellido Paterno</label>
+        <input type="text" id="apaterno" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        placeholder="Ingrese su apellido" formControlName="apaterno" />
+      </div>
+
+      <!-- Apellido Materno -->
+      <div class="mb-5">
+        <label for="amaterno" class="block mb-2 text-sm font-medium text-gray-900">Apellido Materno</label>
+        <input type="text" id="amaterno" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        placeholder="Ingrese su apellido" formControlName="amaterno" />
+      </div>
+      
+      <!-- Fecha de Nacimiento -->
+      <div class="mb-5">
+        <h1 class="text-sm font-medium text-gray-900 mb-2">Fecha de nacimiento</h1>
+
+        <!-- Día -->
+        <label for="dia" class="block mb-2 text-sm font-medium text-gray-900">Día</label>
+        <input type="number" max="31" id="dia" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        placeholder="Ingrese su día" formControlName="dia" />
+
+        <!-- Mes -->
+        <label for="mes" class="block mb-2 text-sm font-medium text-gray-900">Mes</label>
+        <input type="number" min="1" max="12" id="mes" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        placeholder="Ingrese su mes" formControlName="mes" />
+
+        <!-- Año -->
+        <label for="year" class="block mb-2 text-sm font-medium text-gray-900">Año</label>
+        <input type="number" min="1984" id="year" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        placeholder="Ingrese su año" formControlName="year" />
+      </div>
+
+      <!-- Sexo -->
+      <div class="mb-5">
+        <h1 class="text-sm font-medium text-gray-900 mb-2">Sexo</h1>
+
+        <!-- Hombre -->
+        <input id="hombre" formControlName="sexo" type="radio" name="sexo" value="hombre"
+        class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300" />
+        <label for="hombre" class="ms-2 text-sm font-medium text-gray-900">Hombre</label>
+          <br>
+        <!-- Mujer -->
+        <input id="mujer" formControlName="sexo" type="radio" name="sexo" value="mujer"
+        class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300" />
+        <label for="mujer" class="ms-2 text-sm font-medium text-gray-900">Mujer</label>
+      </div>
+
+      <!-- Botón de enviar -->
+      <button type="submit" (click)=" mostrar()" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
+        Calcular
+      </button>
+    </form>
+  </div>
+</div>
+<h2 class="text-3xl font-bold text-center text-blue-600 my-6">Resultado del Zodiaco Chino</h2>
+
+<div class="bg-blue-100 shadow-lg rounded-lg p-6 max-w-md mx-auto">
+  <p class="text-lg font-medium text-blue-700 mb-2">Nombre Completo: <span class="font-semibold">{{ nombreCompleto }}</span></p>
+  <p class="text-lg font-medium text-blue-700 mb-2">El año de nacimiento ingresado es: <span class="font-semibold">{{ year }}</span></p>
+  <p class="text-lg font-medium text-blue-700 mb-2">Tu edad es: <span class="font-semibold">{{ edad }}</span> años</p>
+  <p class="text-lg font-medium text-blue-700 mb-4">Tu signo zodiacal chino es: <span class="font-semibold">{{ signoZodiacal }}</span></p>
+
+  <!-- Mostrar la imagen del signo zodiacal -->
+  <div class="flex justify-center">
+    <img [src]="imagenSigno" alt="{{ signoZodiacal }}" class="w-40 h-40 rounded-full border-4 border-blue-200 shadow-lg" />
+  </div>
+</div>

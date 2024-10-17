@@ -7,6 +7,10 @@ export default[
     },
     {
         path:'sing-up',
-        loadComponent:()=> import('./sing-up/sing-up.component')
-    }
+        loadComponent:()=> import('./sing-up/sing-up.component'),
+    },
+    {
+        path: 'zodiacal',
+        loadComponent: () => import('./zodiacal/zodiacal.component'),
+      }      
 ] as Routes
